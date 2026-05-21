@@ -1,138 +1,163 @@
-/* ========== Monochrome Minimal — style.css ========== */
-
-/* -- tune these variables to easily change size/spacing -- */
-:root{
-  --bg: #ffffff;           /* page background */
-  --text: #160202;         /* main text */
-  --muted: #6b6b6b;        /* secondary text */
-  --card: #ffffff;         /* subtle card bg */
-  --accent: #111111;       /* headings accent (monochrome) */
-  --gap: 20px;
-  --container-max: 1100px;
-  --avatar-size: 200px;    /* change this to resize the image */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-/* Reset */
-*{ box-sizing: border-box; margin:0; padding:0; font-family: 'JetBrains Mono', monospace; }
-html,body{ height:100%; background:var(--bg); color:var(--text); -webkit-font-smoothing:antialiased; }
+:root {
+  --bg-color: #ffffff;
+  --text-color: #121212;
+  --text-muted: #666666;
+  --border-color: #e0e0e0;
+}
 
-/* Basic layout */
-main{
-  max-width:var(--container-max);
-  margin: 20px auto;
+/* Base Style */
+body {
+  font-family: 'JetBrains Mono', monospace;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  line-height: 1.6;
+  padding-top: 80px;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
   padding: 0 20px;
 }
-a:link {
-  color: black; /* Color for unvisited links */
-  text-decoration: none; /* Removes underline */
+
+/* Navigasi */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+  background-color: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--border-color);
+  z-index: 100;
 }
 
-a:visited {
-  color: grey; /* Color for visited links */
+.nav-brand {
+  font-weight: bold;
+}
+
+.nav-links a {
+  color: var(--text-color);
   text-decoration: none;
-}
-
-/* ===== Header / Hero ===== */
-.greet{
-  width:100%;
-  min-height: 40vh;
-  display:flex;
-  align-items:center;        /* vertical center */
-  gap:var(--gap);
-  padding: 24px;
-  max-width:var(--container-max);
-  margin: 20px auto 0 auto;
-}
-
-/* If you want the photo on the right instead, uncomment next line */
-/* .greet { flex-direction: row-reverse; } */
-
-.photo1 img{
-  width: var(--avatar-size);
-  height: var(--avatar-size);
-  object-fit: cover;
-  border-radius: 50%;
-  display:block;
-  box-shadow: 0 8px 24px rgba(0,0,0,0.06);
-  border: 2px solid rgba(0,0,0,0.06);
-}
-
-/* Text area in header */
-.textg h1{
-  margin-left: 8px;
-  font-size: clamp(24px, 4.2vw, 50px);
-  color:var(--accent);
-  letter-spacing: -0.5px;
-}
-.textg p{
-  margin-left: 10px;
-  margin-top: 10px;
-  color: var(--muted);
-  max-width: 55ch;
+  margin-left: 20px;
   font-size: 14px;
-  line-height: 1.5;
 }
 
-/* ===== Sections ===== */
-section{
-  display:flex;
-  gap: 16px;
-  align-items:flex-start;
-  margin: 20px auto;
-  padding: 10px 20px;
-  max-width:var(--container-max);
+.nav-links a:hover {
+  text-decoration: underline;
 }
 
-section h2{
-  width: 120px;
-  font-size: 14px;
-  color: var(--muted);
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  margin: 0;
+/* Hero Section (Porto-card) */
+.porto-card {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  padding: 60px 0;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.pic {
+  display: flex;
   flex-shrink: 0;
 }
 
-/* Card-like blocks for items */
-.education-card, .project-card{
-  background: var(--card);
-  border-radius: 8px;
-  padding: 14px;
-  border: 1px solid rgb(57, 7, 7);
-  min-width: 0;
-  flex: 1;
+.pics {
+  width: 140px;
+  height: 140px;
+  border-radius: 99px;
+  object-fit: cover;
+  filter: grayscale(100%);
+  border: 1px solid var(--border-color);
 }
 
-.education-details h3, .project-details h3{
-  margin: 0 0 6px 0;
-  color: var(--accent);
+.bio h1 {
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.bio .subtitle {
+  color: var(--text-muted);
+  margin-bottom: 15px;
+  font-size: 14px;
+}
+
+.bio .description {
+  max-width: 500px;
+  font-size: 14px;
+}
+
+/* Projects Section */
+.projects-section {
+  padding: 60px 0;
+}
+
+.projects-section h2 {
+  font-size: 18px;
+  margin-bottom: 30px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.project-card {
+  border: 1px solid var(--border-color);
+  padding: 25px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.project-card h3 {
   font-size: 16px;
+  margin-bottom: 10px;
 }
 
-.education-details p, .project-details p{
-  margin: 0;
-  color: var(--muted);
+.project-card p {
   font-size: 13px;
+  color: var(--text-muted);
+  margin-bottom: 20px;
 }
 
-/* Contact */
-.contact ul{ list-style:none; display:flex; gap:12px; padding-left:0; margin:0; }
-.contact li{ color:var(--muted); font-size:14px; }
+.project-link {
+  color: var(--text-color);
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: bold;
+}
 
-/* ===== Responsive ===== */
-@media (max-width:880px){
-  .greet{
+.project-link:hover {
+  text-decoration: underline;
+}
+
+/* Responsif untuk Smartphone */
+@media (max-width: 600px) {
+  .porto-card {
     flex-direction: column;
     text-align: center;
-    gap: 12px;
+    gap: 20px;
+  }
+
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .navbar {
     padding: 20px;
   }
-  .textg h1{ margin-left:0; }
-  .textg p{ margin-left:0; }
-  section{ flex-direction: column; padding: 12px 20px; }
-  section h2{ width:100%; margin-bottom:8px; }
 }
-
-
-/* ===== Utilities (optional) ===== */
-/* change the avatar size easily: set --avatar-size on :root or inline style on body */
