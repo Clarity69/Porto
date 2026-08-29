@@ -1,295 +1,227 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en">
 
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Portofolio — Web Developer &amp; Informatics Student</title>
+  <title>Taro  — Informatics Student & Software Developer</title>
   <meta name="description"
-    content="Portofolio pribadi mahasiswa Teknik Informatika & Web Developer berbasis di Bontang, berfokus pada pengembangan web full-stack yang terstruktur dan responsif." />
+    content="Portfolio of Taro (Clarity69), an Informatics student and junior software developer building web projects and exploring IoT and data mining." />
 
-  <!-- Google Fonts: Inter (body), IBM Plex Mono (label/util/code) -->
+  <!-- Fonts: JetBrains Mono for code-flavored accents, Space Grotesk for display, Inter for body -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap"
+    href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&display=swap"
     rel="stylesheet">
+
+  <!-- Font Awesome for skill / social icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
   <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
 
-  <!-- ===== NAVBAR ===== -->
-  <header class="navbar" id="navbar">
-    <nav class="nav-container">
-      <a href="#hero" class="nav-logo">DEV<span class="dot">.</span></a>
+  <!-- Skip link for keyboard / screen reader users -->
+  <a class="skip-link" href="#main">Skip to main content</a>
 
-      <button class="nav-toggle" id="navToggle" aria-label="Buka menu" aria-expanded="false">
-        <span></span><span></span><span></span>
-      </button>
+  <!-- ============ HEADER / NAV ============ -->
+  <header class="site-header" id="top">
+    <nav class="nav" aria-label="Primary">
+      <a href="#top" class="nav__logo" aria-label="Clarity69 — home">
+        <span class="nav__logo-bracket">&lt;</span>Clarity69<span class="nav__logo-bracket">/&gt;</span>
+      </a>
 
-      <ul class="nav-links" id="navLinks">
-        <li><a href="#about" class="nav-link">Profil</a></li>
-        <li><a href="#projects" class="nav-link">Proyek</a></li>
-        <li><a href="#experience" class="nav-link">Pengalaman</a></li>
-        <li><a href="#contact" class="nav-link">Kontak</a></li>
+      <ul class="nav__links" id="navLinks">
+        <li><a href="#home" class="nav__link is-active" data-nav>Home</a></li>
+        <li><a href="#about" class="nav__link" data-nav>About</a></li>
+        <li><a href="#skills" class="nav__link" data-nav>Skills</a></li>
+        <li><a href="#projects" class="nav__link" data-nav>Projects</a></li>
       </ul>
+
+      <button class="nav__toggle" id="navToggle" aria-label="Toggle navigation menu" aria-expanded="false"
+        aria-controls="navLinks">
+        <span class="nav__toggle-bar"></span>
+        <span class="nav__toggle-bar"></span>
+        <span class="nav__toggle-bar"></span>
+      </button>
     </nav>
   </header>
 
-  <main>
+  <main id="main">
 
-    <!-- ===== HERO SECTION ===== -->
-    <section class="hero" id="hero">
-      <div class="hero-inner">
-        <p class="eyebrow">Web Developer &amp; Mahasiswa Teknik Informatika · Bontang, Indonesia</p>
-        <h1 class="hero-title">
-          Membangun aplikasi web<br />yang efisien, efisien &amp; terstruktur.
-        </h1>
-        <p class="hero-desc">
-          Saya seorang mahasiswa Teknik Informatika dan Web Developer yang berfokus pada pengembangan *full-stack*,
-          kustomisasi sistem, dan pengerjaan arsitektur web berbasis arsitektur yang bersih.
+    <!-- ============ HERO ============ -->
+    <section class="hero" id="home">
+      <div class="hero__inner reveal">
+        <p class="hero__eyebrow">
+          <span class="hero__prompt">$ whoami</span>
         </p>
-        <div class="hero-actions">
-          <a href="#projects" class="btn btn-primary">Lihat Proyek</a>
-          <a href="#contact" class="btn btn-ghost">Hubungi Saya</a>
+        <p class="hero__greeting">Hi, I'm</p>
+        <h1 class="hero__name">Taro</h1>
+        <p class="hero__role">Informatics Student &amp; Software Developer</p>
+        <p class="hero__desc">
+          I build practical software projects and explore web development, IoT,
+          and data-driven applications. I learn primarily by building, breaking,
+          debugging and improving real projects.
+        </p>
+        <div class="hero__actions">
+          <a href="https://github.com/Clarity69" class="btn btn--primary" target="_blank" rel="noopener noreferrer">
+            <i class="fa-brands fa-github" aria-hidden="true"></i>
+            View GitHub
+          </a>
+          <a href="#projects" class="btn btn--ghost" data-scroll>
+            See Projects
+          </a>
         </div>
       </div>
-      <div class="hero-index" aria-hidden="true">
-        <span>01</span>
-        <span class="hero-index-line"></span>
-        <span>04</span>
-      </div>
-    </section>
 
-    <!-- ===== ABOUT / PROFILE SECTION ===== -->
-    <section class="section about" id="about">
-      <div class="section-head">
-        <span class="section-number">01</span>
-        <h2 class="section-title">Profil</h2>
-      </div>
-
-      <div class="about-grid">
-        <div class="about-text">
-          <p>
-            Saat ini saya sedang menempuh pendidikan di jurusan Teknik Informatika. Saya memiliki minat mendalam pada
-            pengembangan *web full-stack*, manajemen basis data, serta konfigurasi sistem Linux modular.
-          </p>
-          <p>
-            Saya selalu menerapkan prinsip *form follows function* dalam menulis kode maupun merancang sistem—memastikan
-            aplikasi berjalan optimal, efisien, dan mudah dipelihara.
-          </p>
-        </div>
-
-        <div class="skills">
-          <div class="skill-group">
-            <h3 class="skill-title">Frontend</h3>
-            <ul class="skill-list">
-              <li>HTML5 &amp; CSS3</li>
-              <li>JavaScript (ES6+)</li>
-              <li>Tailwind CSS</li>
-              <li>UI/UX Design</li>
-            </ul>
+      <!-- Small terminal-style panel, fills the empty space with real, honest info -->
+      <div class="hero__panel reveal" aria-hidden="true">
+        <div class="terminal">
+          <div class="terminal__bar">
+            <span class="terminal__dot terminal__dot--red"></span>
+            <span class="terminal__dot terminal__dot--yellow"></span>
+            <span class="terminal__dot terminal__dot--green"></span>
+            <span class="terminal__title">guest@clarity69:~</span>
           </div>
-
-          <div class="skill-group">
-            <h3 class="skill-title">Backend &amp; Database</h3>
-            <ul class="skill-list">
-              <li>Node.js / Express</li>
-              <li>Supabase / PostgreSQL</li>
-              <li>RESTful API</li>
-              <li>OOP &amp; Logic</li>
-            </ul>
-          </div>
-
-          <div class="skill-group">
-            <h3 class="skill-title">Tools &amp; Environment</h3>
-            <ul class="skill-list">
-              <li>Git &amp; GitHub</li>
-              <li>Vercel Deployment</li>
-              <li>Linux / Arch Environment</li>
-              <li>VS Code / Terminal</li>
-            </ul>
+          <div class="terminal__body">
+            <p><span class="terminal__prompt">$</span> whoami</p>
+            <p class="terminal__line">Taro — github.com/Clarity69</p>
+            <p><span class="terminal__prompt">$</span> role</p>
+            <p class="terminal__line">Informatics Student</p>
+            <p><span class="terminal__prompt">$</span> focus</p>
+            <p class="terminal__line">Web Development</p>
+            <p><span class="terminal__prompt">$</span> exploring</p>
+            <p class="terminal__line">IoT · Data Mining</p>
+            <p><span class="terminal__prompt">$</span> <span class="terminal__cursor">_</span></p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- ===== PROJECTS / WORK SECTION ===== -->
-    <section class="section projects" id="projects">
-      <div class="section-head">
-        <span class="section-number">02</span>
-        <h2 class="section-title">Proyek</h2>
-      </div>
+    <!-- ============ ABOUT ============ -->
+    <section class="section" id="about">
+      <div class="section__inner reveal">
+        <p class="section__eyebrow">About</p>
+        <h2 class="section__title">Background</h2>
 
-      <!-- Filter kategori -->
-      <div class="filter-bar" id="filterBar">
-        <button class="filter-btn active" data-filter="all">Semua</button>
-        <button class="filter-btn" data-filter="fullstack">Full-stack</button>
-        <button class="filter-btn" data-filter="frontend">Frontend</button>
-        <button class="filter-btn" data-filter="hardware">Hardware/System</button>
-      </div>
-
-      <!-- Grid kartu proyek -->
-      <div class="project-grid" id="projectGrid">
-
-        <article class="project-card" data-category="fullstack">
-          <div class="project-thumb" aria-hidden="true">
-            <span>Resto App</span>
-          </div>
-          <div class="project-body">
-            <h3 class="project-title">Fullstack Restaurant Website</h3>
-            <p class="project-desc">Aplikasi manajemen dan pemesanan restoran berbasis *full-stack* dengan integrasi
-              basis data real-time.</p>
-            <div class="project-tags">
-              <span class="tag">JavaScript</span>
-              <span class="tag">Supabase</span>
-              <span class="tag">Vercel</span>
-            </div>
-            <div class="project-links">
-              <a href="#" class="project-link">Demo ↗</a>
-              <a href="#" class="project-link">GitHub ↗</a>
-            </div>
-          </div>
-        </article>
-
-        <article class="project-card" data-category="hardware">
-          <div class="project-thumb" aria-hidden="true">
-            <span>Amp Mod</span>
-          </div>
-          <div class="project-body">
-            <h3 class="project-title">Custom Radio PCB Audio Amplifier</h3>
-            <p class="project-desc">Modifikasi hardware papan sirkuit radio bekas menjadi sistem penguat suara (*audio
-              amplifier*) kustom.</p>
-            <div class="project-tags">
-              <span class="tag">Hardware</span>
-              <span class="tag">Soldering</span>
-              <span class="tag">Electronics</span>
-            </div>
-            <div class="project-links">
-              <a href="#" class="project-link">Detail ↗</a>
-            </div>
-          </div>
-        </article>
-
-        <article class="project-card" data-category="frontend">
-          <div class="project-thumb" aria-hidden="true">
-            <span>DevOps Showcase</span>
-          </div>
-          <div class="project-body">
-            <h3 class="project-title">Vercel Web Deployment Guide</h3>
-            <p class="project-desc">Modul dan situs panduan langkah demi langkah untuk proses *deployment* web dan alur
-              kerja DevOps sederhana.</p>
-            <div class="project-tags">
-              <span class="tag">HTML/CSS</span>
-              <span class="tag">Vercel</span>
-              <span class="tag">DevOps</span>
-            </div>
-            <div class="project-links">
-              <a href="#" class="project-link">Demo ↗</a>
-              <a href="#" class="project-link">GitHub ↗</a>
-            </div>
-          </div>
-        </article>
-
-      </div>
-
-      <p class="empty-state" id="emptyState" hidden>Belum ada proyek pada kategori ini.</p>
-    </section>
-
-    <!-- ===== EXPERIENCE / TIMELINE SECTION ===== -->
-    <section class="section experience" id="experience">
-      <div class="section-head">
-        <span class="section-number">03</span>
-        <h2 class="section-title">Pengalaman &amp; Akademik</h2>
-      </div>
-
-      <ol class="timeline">
-        <li class="timeline-item">
-          <div class="timeline-marker"></div>
-          <div class="timeline-content">
-            <span class="timeline-date">Sekarang</span>
-            <h3 class="timeline-role">S1 Teknik Informatika</h3>
-            <p class="timeline-desc">
-              Fokus pada Pemrograman Berbasis Objek (OOP), Matematika Diskrit, Struktur Data, dan Pengembangan Aplikasi
-              Web.
+        <div class="about__grid">
+          <div class="about__text">
+            <p>
+              I'm an Informatics student learning software development mainly by
+              building things end to end — setting a project up, breaking it,
+              debugging it, and shipping a working version. Most of what's in my
+              GitHub came out of coursework I turned into real, working projects
+              rather than one-off assignments.
+            </p>
+            <p>
+              My current focus is web development with plain HTML, CSS and
+              JavaScript. Alongside that, I'm exploring IoT and data mining, and
+              I keep a customized Linux setup — partly because I like a clean
+              environment, partly because configuring it teaches me how the
+              underlying system actually works.
             </p>
           </div>
-        </li>
 
-        <li class="timeline-item">
-          <div class="timeline-marker"></div>
-          <div class="timeline-content">
-            <span class="timeline-date">2026</span>
-            <h3 class="timeline-role">Google Cloud #JuaraGCP Program</h3>
-            <p class="timeline-desc">
-              Penyelesaian berbagai modul pelatihan *cloud computing* dan meraih *skill badges* dalam infrastruktur
-              cloud.
-            </p>
-          </div>
-        </li>
-
-        <li class="timeline-item">
-          <div class="timeline-marker"></div>
-          <div class="timeline-content">
-            <span class="timeline-date">Proyek Mandiri</span>
-            <h3 class="timeline-role">Full-Stack Web &amp; System Modding</h3>
-            <p class="timeline-desc">
-              Mengembangkan aplikasi web independen serta melakukan kustomisasi sistem operasi berbasis Linux/Hyprland.
-            </p>
-          </div>
-        </li>
-      </ol>
+          <dl class="about__stats" aria-label="Quick facts">
+            <div class="stat stat--text">
+              <dd class="stat__value">14+</dd>
+              <dt class="stat__label">Public Projects</dt>
+            </div>
+            <div class="stat stat--text">
+              <dd class="stat__value">Web Development</dd>
+              <dt class="stat__label">Core Focus</dt>
+            </div>
+            <div class="stat stat--text">
+              <dd class="stat__value">IoT &amp; Data</dd>
+              <dt class="stat__label">Currently Exploring</dt>
+            </div>
+          </dl>
+        </div>
+      </div>
     </section>
 
-    <!-- ===== CONTACT SECTION ===== -->
-    <section class="section contact" id="contact">
-      <div class="section-head">
-        <span class="section-number">04</span>
-        <h2 class="section-title">Kontak</h2>
-      </div>
+    <!-- ============ SKILLS ============ -->
+    <section class="section section--alt" id="skills">
+      <div class="section__inner reveal">
+        <p class="section__eyebrow">Skills</p>
+        <h2 class="section__title">What I actually use</h2>
+        <p class="section__lede">
+          Split by how far along each one is — technologies I ship projects with,
+          tools I use to build and deploy, and areas I'm still learning.
+        </p>
 
-      <div class="contact-grid">
-        <div class="contact-intro">
-          <p>
-            Tertarik untuk berdiskusi seputar proyek web, kolaborasi, atau sekadar bertukar pikiran teknis? Silakan
-            kirimkan pesan di bawah ini.
-          </p>
-          <ul class="social-list">
-            <li><a href="#" class="social-link">GitHub ↗</a></li>
-            <li><a href="#" class="social-link">LinkedIn ↗</a></li>
-            <li><a href="mailto:email@domain.com" class="social-link">Email ↗</a></li>
-          </ul>
+        <div class="skills" id="skillsGrid">
+          <!-- Skill categories are rendered by script.js -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ PROJECTS ============ -->
+    <section class="section" id="projects">
+      <div class="section__inner reveal">
+        <p class="section__eyebrow">Projects</p>
+        <h2 class="section__title">Featured projects</h2>
+        <p class="section__lede">
+          The projects that best show how I build — what problem each one
+          solves and how it was put together.
+        </p>
+
+        <div class="projects__grid" id="featuredProjectsGrid">
+          <!-- Featured project cards are rendered by script.js -->
         </div>
 
-        <form class="contact-form" id="contactForm" novalidate>
-          <div class="form-field">
-            <label for="name">Nama</label>
-            <input type="text" id="name" name="name" placeholder="Nama lengkap" required />
-          </div>
+        <div class="projects__secondary">
+          <p class="section__eyebrow">More</p>
+          <h3 class="projects__secondary-title">Other projects &amp; experiments</h3>
+          <p class="section__lede">
+            Coursework, tooling and desktop configuration — smaller in scope, but
+            still real code, and still worth a look.
+          </p>
 
-          <div class="form-field">
-            <label for="email">Email</label>
-            <input type="email" id="email" name="email" placeholder="nama@email.com" required />
+          <div class="projects__grid projects__grid--compact" id="otherProjectsGrid">
+            <!-- Other project cards are rendered by script.js -->
           </div>
+        </div>
+      </div>
+    </section>
 
-          <div class="form-field">
-            <label for="message">Pesan</label>
-            <textarea id="message" name="message" rows="4" placeholder="Tuliskan pesan Anda..." required></textarea>
-          </div>
-
-          <button type="submit" class="btn btn-primary form-submit">Kirim Pesan</button>
-          <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
-        </form>
+    <!-- ============ CONNECT (no form) ============ -->
+    <section class="section section--alt" id="connect">
+      <div class="section__inner reveal reveal--center">
+        <p class="section__eyebrow">Let's Connect</p>
+        <h2 class="section__title">Interested in my work?</h2>
+        <p class="section__lede">
+          Feel free to explore my projects or connect with me through GitHub, or
+          the social links on this page.
+        </p>
+        <div class="hero__actions" id="connectActions" style="justify-content: center;">
+          <!-- Connect buttons are rendered by script.js, based on which links are actually set -->
+        </div>
       </div>
     </section>
 
   </main>
 
-  <!-- ===== FOOTER ===== -->
+  <!-- ============ SOCIAL AsIDE (fixed, right side) ============ -->
+  <aside class="social-rail" id="socialRail" aria-label="Social media links">
+    <ul class="social-rail__list" id="socialList">
+      <!-- Social icons rendered by script.js -->
+    </ul>
+  </aside>
+
+  <!-- ============ FOOTER ============ -->
   <footer class="footer">
-    <p>&copy; <span id="year"></span> Mahasiswa Teknik Informatika. Dibuat dengan HTML, CSS &amp; JavaScript murni.</p>
-    <button class="back-to-top" id="backToTop" aria-label="Kembali ke atas">↑</button>
+    <div class="footer__inner">
+      <p class="footer__text">
+        &copy; <span id="year"></span> Clarity69. Built with vanilla HTML, CSS &amp; JavaScript.
+      </p>
+      <a href="https://github.com/Clarity69" class="footer__link" target="_blank" rel="noopener noreferrer">
+        <i class="fa-brands fa-github" aria-hidden="true"></i>
+        github.com/Clarity69
+      </a>
+    </div>
   </footer>
 
   <script src="script.js"></script>
