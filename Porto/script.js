@@ -287,7 +287,7 @@ function renderConnectActions() {
 
   if (socialLinks.github) {
     buttons.push(`
-      <a href="${socialLinks.github}" class="btn btn--primary" id="button"target="_blank" rel="noopener noreferrer">
+      <a href="${socialLinks.github}" class="btn btn--primary" target="_blank" rel="noopener noreferrer">
         <i class="fa-brands fa-github" aria-hidden="true"></i>
         View GitHub
       </a>
